@@ -94,8 +94,9 @@ def check_version(io, just_check=False, verbose=False):
         VERSION_CHECK_FNAME.parent.mkdir(parents=True, exist_ok=True)
         VERSION_CHECK_FNAME.touch()
 
-    ###
-    # is_update_available = True
+    ### Prevent automatic updates breaking everything every damn week
+    ### We'll update ourselves when we are ready.
+    is_update_available = False
 
     if just_check or verbose:
         if is_update_available:
